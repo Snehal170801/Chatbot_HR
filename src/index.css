@@ -1,0 +1,40 @@
+/* src\index.css */
+@import "tailwindcss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Dashboard: scale the fixed-pixel 3-panel layout down to fit narrower screens */
+.dash-fit {
+  --z: 1;
+  --dash-h: calc((100dvh - 121px) / var(--z));
+}
+
+@media (min-width: 1280px) {
+  .dash-fit { --z: 0.65; zoom: var(--z); }
+}
+@media (min-width: 1440px) {
+  .dash-fit { --z: 0.75; }
+}
+@media (min-width: 1600px) {
+  .dash-fit { --z: 0.85; }
+}
+@media (min-width: 1766px) {
+  .dash-fit { --z: 1; zoom: 1; }
+}
